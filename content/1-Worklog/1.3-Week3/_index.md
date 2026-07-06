@@ -1,57 +1,35 @@
 ---
-title: "Week 3 Worklog"
-date: 2024-01-01
-weight: 1
+title: " Worklog Week 3"
+date: 2026-05-04
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 3 objectives:
+* Complete the process of earning Credit from the AWS Free Tier program.
+* Set up cost alerts and apply the highest account security standards (IAM User, MFA).
+* Expand IAM knowledge: from granting permissions to people (User) to granting permissions directly to AWS resources (Role) — an important security foundation to be applied in practice next week.
 
-### Week 3 Objectives:
+### Tasks to complete this week:
+| Day | Task | Start Date | Completion Date | Reference |
+| --- | --- | --- | --- | --- |
+| Tue | - **Practice Task 3 (Credit):** Launch a static S3 Bucket. <br> - **Practice Task 4 (Credit):** Create a basic RDS Database. <br> - **Practice Task 5 (Credit):** Create a simple Lambda function. | 05/05/2026 | 05/05/2026 | [AWS Free Tier Guide](https://000001.awsstudygroup.com/vi/) |
+| Thu | - Practice managing AWS spending with the AWS Budgets service. <br> - Manage access permissions with AWS IAM (creating a Group and an Admin User). <br> - Set up security for the IAM User (Password Policy, MFA). | 07/05/2026 | 07/05/2026 | [AWS Budgets](https://000007.awsstudygroup.com/vi/) <br> [AWS IAM](https://000002.awsstudygroup.com/vi/) |
+| Sat | - Learn about the risk of storing hardcoded Access Keys/Secret Keys on a server or in source code. <br> - Learn the IAM Role concept: granting permissions directly to an AWS resource instead of assigning static credentials. <br> - **Practice:** Create an IAM Role that allows access to S3, and learn the temporary-credentials mechanism behind an Instance Profile. | 09/05/2026 | 09/05/2026 | [AWS IAM](https://000002.awsstudygroup.com/vi/) |
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 3 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Results achieved in Week 3:
+* Fully completed all 5 "Money-Making" Tasks, officially collecting the entire $200 Credit for use in advanced labs:
+  * S3: understood the concept of object storage, buckets, and basic object upload/management.
+  * RDS: launched a database instance and verified a basic connection.
+  * Lambda: wrote and deployed a simple function, understanding the serverless model (no server management required).
+* Set up cost alerts with AWS Budgets:
+  * Configured alert thresholds based on a percentage of the planned budget.
+  * Connected email notifications to trigger when the threshold is exceeded, avoiding unexpected charges.
+* Successfully set up a secure AWS account with an IAM Admin User (retiring use of the Root account):
+  * Created an IAM Group to assign permissions by role, instead of granting permissions individually to each User.
+  * Applied a Password Policy requiring a password change on first login.
+  * Enabled MFA (Virtual MFA Device) for the Admin account.
+* Understood why storing hardcoded Access Keys/Secret Keys is a major security risk:
+  * Real-world risks: keys leaked through Git commits, application logs, or public config files.
+  * Solution: use an IAM Role to grant temporary credentials that rotate automatically, removing the need to store static credentials on a resource — knowledge to be applied in practice when deploying EC2 in Week 4.

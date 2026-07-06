@@ -14,10 +14,10 @@ pre: " <b> 1.4. </b> "
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | --- | --- | --- | --- |
-| 3 | - Tìm hiểu lý thuyết về Classless Inter-Domain Routing (CIDR) và Subnet Mask. <br> - Phân tích kỹ thuật chia mạng con Variable Length Subnet Mask (VLSM). | 12/05/2026 | 12/05/2026 | [Tài liệu FCAJ](https://cloudjourney.awsstudygroup.com/vi/) |
-| 5 | - Thực hành: Khởi tạo Amazon VPC mới (không dùng Default VPC). <br> - Thiết lập Public Subnet và Private Subnet dựa trên tính toán VLSM. <br> - Cấu hình Internet Gateway (IGW) và Route Tables để thông luồng mạng ra internet. | 14/05/2026 | 14/05/2026 | [Tài liệu FCAJ](https://cloudjourney.awsstudygroup.com/vi/) |
-| 6 | - **Thực hành:** Khởi tạo EC2 instance trong Public Subnet của VPC vừa tạo. <br> - Kết nối SSH vào máy chủ bằng Keypair (.pem), xử lý phân quyền file chứng chỉ (chmod 400). | 15/05/2026 | 15/05/2026 | [Tài liệu FCAJ](https://cloudjourney.awsstudygroup.com/vi/) |
-| 7 | - **Thực hành:** Gắn IAM Role đã tạo ở tuần 3 vào EC2 instance (Instance Profile), kiểm chứng EC2 truy cập được S3 mà không cần khai báo Access Key/Secret Key. <br> - Tìm hiểu và thiết lập môi trường lập trình Cloud IDE với AWS Cloud9. | 16/05/2026 | 16/05/2026 | [Tài liệu FCAJ](https://cloudjourney.awsstudygroup.com/vi/) |
+| 3 | - Tìm hiểu lý thuyết về Classless Inter-Domain Routing (CIDR) và Subnet Mask. <br> - Phân tích kỹ thuật chia mạng con Variable Length Subnet Mask (VLSM). | 12/05/2026 | 12/05/2026 | [Giới thiệu Amazon VPC](https://000003.awsstudygroup.com/vi/1-introduce/) |
+| 5 | - Thực hành: Khởi tạo Amazon VPC mới (không dùng Default VPC). <br> - Thiết lập Public Subnet và Private Subnet dựa trên tính toán VLSM. <br> - Cấu hình Internet Gateway (IGW) và Route Tables để thông luồng mạng ra internet. | 14/05/2026 | 14/05/2026 | [Chuẩn bị Môi trường](https://000003.awsstudygroup.com/vi/3-prerequisite/)|
+| 6 | - **Thực hành:** Khởi tạo EC2 instance trong Public Subnet của VPC vừa tạo. <br> - Kết nối SSH vào máy chủ bằng Keypair (.pem), xử lý phân quyền file chứng chỉ (chmod 400). | 15/05/2026 | 15/05/2026 | [Triển khai Amazon EC2 Instance](https://000003.awsstudygroup.com/vi/4-createec2server/) |
+| 7 | - **Thực hành:** Gắn IAM Role đã tạo ở tuần 3 vào EC2 instance (Instance Profile), kiểm chứng EC2 truy cập được S3 mà không cần khai báo Access Key/Secret Key. <br> - Tìm hiểu và thiết lập môi trường lập trình Cloud IDE với AWS Cloud9. | 16/05/2026 | 16/05/2026 | [Cấp quyền cho ứng dụng truy cập dịch vụ AWS thông qua IAM Role](https://000048.awsstudygroup.com/vi/) |
 
 ### Kết quả đạt được tuần 4:
 * Hiểu sâu về cách thức quy hoạch IP:

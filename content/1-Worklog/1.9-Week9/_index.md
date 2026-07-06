@@ -1,57 +1,28 @@
 ---
-title: "Week 9 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog Week 9"
+date: 2026-06-15
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 9 objectives:
+* Begin implementing the workshop project — **AI Content Generator Platform**: a SaaS platform that generates marketing content with AI based on a Brand Persona (each business's own brand voice).
+* Complete the entire backend core: authentication, brand persona, asynchronous content generation via SQS, multi-format export, usage/quota.
 
-### Week 9 Objectives:
+### Tasks to complete this week:
+| Day | Task | Start Date | Completion Date |
+| --- | --- | --- | --- |
+| Mon | - Scaffold the monorepo (backend/frontend/infrastructure), Docker Compose (PostgreSQL+Redis+LocalStack). <br> - Design an 11-table multi-tenant Prisma schema, configuration layer (database/redis/aws/logger). <br> - Build the full Auth flow (register/login/refresh/logout/me + JWT rotation), Brand Persona CRUD + Redis cache, Content CRUD + async operations pushed to SQS. <br> - Write worker.ts (SQS consumer → AI provider → save ContentVersion + UsageLog). | 15/06/2026 | 15/06/2026 |
+| Tue | - Complete Campaign CRUD (multi-tenant filtering, soft delete). <br> - Test the full end-to-end flow: register → create a persona → create content → generate → poll the job. <br> - Fixed several bugs: normalizing persona data types, incorrect parameters when enqueueing to SQS, AI provider client configuration. | 16/06/2026 | 16/06/2026 |
+| Wed | - Built the Export Service: generating PDF/DOCX/HTML files from content, uploading to S3, and returning a presigned URL. <br> - Added a Mock mode for the AI Provider so development doesn't depend on real AI costs. <br> - Fixed an S3 Client configuration bug when used with the local simulated environment. | 17/06/2026 | 17/06/2026 |
+| Thu | - Built the usage-tracking feature (monthly, per AI model). <br> - Implemented Quota Enforcement: blocking content generation once the limit is exceeded, with shared logic between the API and the Worker. <br> - Built the Org Settings management page: viewing/updating quotas, role-based permissions (OWNER/ADMIN). | 18/06/2026 | 18/06/2026 |
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 9 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Results achieved in Week 9:
+* Completed the entire backend core of the workshop project within the first 5 days:
+  * A proper multi-tenant architecture: every table has an `organizationId`, and every query filters by organization — preventing data leakage between different customers.
+  * A complete asynchronous processing flow: the API receives a request → pushes a job to SQS → responds immediately → the Worker processes the AI job in the background → updates the result — correctly applying the Serverless/Queue architecture learned in Week 7.
+  * A Quota mechanism shared between the API and the Worker — avoiding duplicated logic and ensuring consistent enforcement in both places.
+* Successfully built a multi-format Export feature (PDF/DOCX/HTML) with a secure file-download mechanism via presigned URLs, without exposing the storage bucket directly to the public.
+* Set up a Mock mode for the AI Provider — allowing development and testing to run in parallel without incurring continuous real AI costs.
+* Proficiently applied several skills learned in previous weeks in practice: multi-tenant filtering (a least-privilege mindset), the async job pattern (SQS/Worker), and managing relational data with Prisma/PostgreSQL.

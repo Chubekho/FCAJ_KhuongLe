@@ -34,4 +34,4 @@ pre: " <b> 1.11. </b> "
   - WAF chặn trước các kiểu tấn công phổ biến ngay ở tầng vào của hệ thống.
 - Chính thức bước sang giai đoạn triển khai hạ tầng thật:
   - Đóng gói được artifact chuẩn (container image, bundle serverless) — đúng kỹ năng đã luyện tập ở tuần 6-7.
-  - Dựng thành công phần khung hạ tầng nền tảng (mạng riêng nhiều vùng khả dụng, database dự phòng, load balancer, auto scaling) — áp dụng trực tiếp kiến thức Highly Availability đã học ở tuần 9.
+  - Dựng thành công phần khung hạ tầng nền tảng (mạng riêng nhiều vùng khả dụng, database dự phòng, load balancer, auto scaling) — áp dụng trực tiếp kiến thức Highly Availability đã học ở tuần 5.

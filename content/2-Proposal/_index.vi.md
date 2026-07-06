@@ -77,7 +77,7 @@ Mọi API request đều đi qua AWS WAF, Amazon API Gateway và Amazon Cognito 
 
 **Sơ đồ kiến trúc:**
 
-![Kiến trúc hệ thống AI Content Generator Platform](/images/proposal-architecture.png)
+![Kiến trúc hệ thống AI Content Generator Platform](/images/5-Workshop/5.1-Workshop-overview/architecture.jpg)
 
 ### 4.2 Các thành phần kiến trúc
 

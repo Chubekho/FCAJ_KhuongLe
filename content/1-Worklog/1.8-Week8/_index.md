@@ -1,57 +1,33 @@
 ---
-title: "Week 8 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog Week 8"
+date: 2026-06-08
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 8 objectives:
+* Learn the Security & Reliability service group: permission limiting, application protection, data encryption, system backup.
+* Get familiar with Infrastructure as Code (IaC) via AWS CloudFormation — instead of manual Console operations.
 
-### Week 8 Objectives:
+### Tasks to complete this week:
+| Day | Task | Start Date | Completion Date | Reference |
+| --- | --- | --- | --- | --- |
+| Mon | - Learn IAM Permission Boundary: the maximum permission ceiling a User/Role can have, regardless of what policies are attached. <br> - **Practice:** Create a Permission Boundary, attach it to an IAM User, and verify the user cannot self-escalate permissions beyond the boundary. | 08/06/2026 | 08/06/2026 | [Limiting User Permissions with IAM Permission Boundary](https://000030.awsstudygroup.com) |
+| Tue | - Learn AWS WAF: protecting web applications from common vulnerabilities (SQL Injection, XSS), rate limiting. <br> - **Practice:** Attach a WAF WebACL to an Application Load Balancer, create a rule to block SQL Injection and limit request rates. | 09/06/2026 | 09/06/2026 | [Protecting Applications and APIs with AWS WAF](https://000026.awsstudygroup.com) |
+| Wed | - Learn AWS KMS: encryption key management, envelope encryption. <br> - **Practice:** Create a Customer Managed Key, encrypt an object in S3 using a custom key instead of the AWS default key. | 10/06/2026 | 10/06/2026 | [Managing Encryption Keys with AWS KMS](https://000033.awsstudygroup.com) |
+| Thu | - Learn AWS Backup: automated backup plans, retention policy. <br> - **Practice:** Create a Backup Plan to automatically back up RDS daily, and perform a test restore from a backup. | 11/06/2026 | 11/06/2026 | [Implementing a System Backup Plan with AWS Backup](https://000013.awsstudygroup.com) |
+| Fri | - Learn AWS CloudFormation: Infrastructure as Code, YAML/JSON templates, the Stack concept. <br> - **Practice:** Write a template to create a VPC + EC2 using CloudFormation, comparing it with manual Console operations. | 12/06/2026 | 12/06/2026 | [Getting Started with Infrastructure as Code using AWS CloudFormation](https://000037.awsstudygroup.com) |
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 8 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Results achieved in Week 8:
+* Understood and applied the least-privilege principle at a deeper layer than ordinary IAM Policies:
+  * Permission Boundary caps the maximum permission "ceiling," preventing escalation even if someone accidentally attaches an overly broad policy.
+* Deployed an application protection layer at the network level with AWS WAF:
+  * Understood the mechanism of managed rules (blocking common exploits) combined with custom rules (rate limiting tailored to specific needs).
+* Mastered the concept of data encryption with KMS:
+  * Distinguished between AWS-managed keys and Customer-managed keys — and when independent control over a key's lifecycle is needed.
+* Built an automated backup strategy instead of relying on manual backups:
+  * Understood retention policy and the importance of periodically testing restores (an untested backup is not a trustworthy one).
+* Got familiar with the Infrastructure as Code mindset:
+  * Infrastructure defined as files that can be version-controlled, reviewed, and reused — a stark contrast to error-prone, hard-to-reproduce manual operations.
+  * This is an important foundational mindset for managing the infrastructure of the workshop project in the coming weeks, even if the specific IaC tooling differs (scripts/CLI instead of CloudFormation).

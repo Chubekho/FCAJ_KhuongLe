@@ -1,57 +1,35 @@
 ---
-title: "Week 4 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog Week 4"
+date: 2026-05-11
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 4 objectives:
+* Master IP addressing concepts and hands-on deploy an enterprise-standard virtual network infrastructure on Amazon VPC.
+* Deploy an application server (EC2) into the newly built VPC, applying the IAM Role learned in Week 3 to securely grant S3 access.
+* Get familiar with the AWS Cloud9 cloud development environment, preparing the tooling for upcoming practice weeks.
 
-### Week 4 Objectives:
+### Tasks to complete this week:
+| Day | Task | Start Date | Completion Date | Reference |
+| --- | --- | --- | --- | --- |
+| Tue | - Learn the theory behind Classless Inter-Domain Routing (CIDR) and Subnet Masks. <br> - Analyze Variable Length Subnet Mask (VLSM) subnetting techniques. | 12/05/2026 | 12/05/2026 | [Introduction to Amazon VPC](https://000003.awsstudygroup.com/1-introduce/) |
+| Thu | - Practice: Create a new Amazon VPC (not using the Default VPC). <br> - Set up Public and Private Subnets based on VLSM calculations. <br> - Configure the Internet Gateway (IGW) and Route Tables to enable outbound internet traffic. | 14/05/2026 | 14/05/2026 | [Environment Preparation](https://000003.awsstudygroup.com/3-prerequisite/)|
+| Fri | - **Practice:** Launch an EC2 instance in the Public Subnet of the newly created VPC. <br> - Connect via SSH using a Keypair (.pem), handling certificate file permissions (chmod 400). | 15/05/2026 | 15/05/2026 | [Deploying an Amazon EC2 Instance](https://000003.awsstudygroup.com/4-createec2server/) |
+| Sat | - **Practice:** Attach the IAM Role created in Week 3 to the EC2 instance (Instance Profile), verifying that EC2 can access S3 without declaring an Access Key/Secret Key. <br> - Learn about and set up the Cloud9 IDE development environment. | 16/05/2026 | 16/05/2026 | [Granting Applications Access to AWS Services via IAM Role](https://000048.awsstudygroup.com/) |
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 4 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Results achieved in Week 4:
+* Gained a deep understanding of IP planning:
+  * Clearly distinguished Network ID and Host ID through CIDR ranges.
+  * Calculated VLSM to divide subnets of varying sizes, avoiding wasted IP ranges.
+* Designed and deployed a complete standalone Amazon VPC:
+  * A Public Subnet (routed to the Internet via the IGW) and a Private Subnet (isolated, with no direct outbound route).
+  * A separate Route Table for each subnet type, understanding the routing mechanism that separates public and private zones.
+* Successfully launched and ran an EC2 server inside the newly established VPC:
+  * Connected via SSH using a Keypair, resolving the common permission error when using a .pem file (chmod 400).
+* Successfully applied an IAM Role (Instance Profiling) to a real EC2 instance:
+  * Attached the Role directly to EC2, confirming normal S3 access with no Access/Secret Key stored on the machine.
+  * Verified the security theory learned in Week 3 through concrete practice — no longer just theory.
+* Successfully set up the AWS Cloud9 development environment:
+  * Wrote and ran commands directly in the browser, with no need for a local setup — ready for the coding practice in the coming weeks.

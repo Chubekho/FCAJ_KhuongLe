@@ -15,6 +15,7 @@ pre: " <b> 1.2. </b> "
 | 4 | - Đọc hướng dẫn chương trình AWS Free Tier 2025. <br> - Tìm hiểu lý thuyết về Amazon EC2 (Compute) và các loại Instance Type. <br> - **Thực hành Task 1 (Credit):** Khởi tạo một máy chủ ảo EC2 cơ bản. <br> - Tìm hiểu lý thuyết cơ bản về VPC (Mạng ảo). <br> - **Thực hành Task 2 (Credit):** Khám phá cấu trúc mạng Default VPC và gắn Elastic IP.| 29/04/2026 | 29/04/2026 | [AWS Free Tier Guide](https://000001.awsstudygroup.com/vi/) |
 
 ### Kết quả đạt được tuần 2:
-* Nắm bắt được chiến lược nhận $200 Credit từ chương trình AWS Free Tier mới .
-* Phân biệt được sự khác nhau cơ bản giữa VPS (máy chủ độc lập) và VPC (một mạng ảo riêng biệt bảo vệ máy chủ).
-* Hoàn thành 2 trên 5 nhiệm vụ thực hành đầu tiên, qua đó hiểu cách hoạt động của dịch vụ tính toán (EC2).
+* Nắm rõ điều kiện và cách thức nhận $200 Credit từ chương trình AWS Free Tier — tiền đề để thoải mái thực hành các dịch vụ trả phí ở các tuần sau mà không lo phát sinh chi phí cá nhân.
+* Khởi tạo thành công EC2 instance đầu tiên, hiểu được vai trò của Instance Type trong việc lựa chọn tài nguyên (CPU/RAM) phù hợp với khối lượng công việc.
+* Khám phá cấu trúc Default VPC và thực hành gắn Elastic IP — từ đó phân biệt rõ ràng hai khái niệm dễ nhầm lẫn: VPC là ranh giới mạng cách ly logic bảo vệ tài nguyên, còn EC2 mới là máy chủ thực sự chạy bên trong ranh giới đó.
+* Hoàn thành 2/5 "Money-Making Tasks" đầu tiên, đặt nền móng vững chắc cho tuần 3 khi tiếp tục các nhiệm vụ còn lại.

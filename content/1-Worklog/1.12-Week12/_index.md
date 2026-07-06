@@ -1,57 +1,26 @@
 ---
-title: "Week 12 Worklog"
-date: 2024-01-01
-weight: 2
+title: "Worklog Week 12"
+date: 2026-07-06
+weight: 12
 chapter: false
 pre: " <b> 1.12. </b> "
+
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 12 objectives:
+* Finish deploying the real AWS infrastructure, build automated CI/CD, and finalize all documentation.
 
-### Week 12 Objectives:
+### Tasks to complete this week:
+| Day | Task | Start Date | Completion Date |
+| --- | --- | --- | --- |
+| Mon | - Fixed issues that only appeared once the system went live: missing IAM permissions, an incorrectly configured encrypted connection to the database. <br> - Finished deploying the background processing worker as a serverless function, connecting it to the production message queue. <br> - Handled a replacement for the primary CDN (since the account wasn't verified): switching to static hosting + an alternate CDN, configuring a subdomain, attaching a Web Application Firewall, and setting up full monitoring alerts. <br> - Rotated all sensitive secrets that had been previously exposed (auth keys, database info, AI API key). <br> - Ran the seed data against production through a secure session-manager tunnel. | 06/07/2026 | 06/07/2026 |
+| Tue | - Built an automated CI/CD pipeline with GitHub Actions: authenticating to AWS via OIDC (no long-lived access keys), automated code checks (lint + type-check), building/pushing the image, updating the background worker, building/pushing the frontend, then checking system health. Verified in practice: push code → the entire pipeline runs green → production updates automatically. <br> - Completed end-to-end business flow testing on the real environment (register → persona → create content → export → usage), confirming the WAF correctly blocks attacks. <br> - Drew the system's overall architecture diagram. <br> - Reviewed and finalized the README (architecture, deployment guide, fixing sections no longer matching reality after the CDN/auth changes), consolidating documentation to prepare for the end-of-course demo. | 07/07/2026 | 07/07/2026 |
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 12 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Results achieved in Week 12:
+* Finished the entire production infrastructure for the workshop project:
+  * Resolved "production-only" issues once and for all (IAM permissions, encrypted database connections) — an important lesson: a local/LocalStack environment doesn't fully replicate real AWS behavior.
+  * Had a reasonable fallback plan when the primary CDN service was blocked — not letting an unexpected limitation stall progress.
+* Fully resolved the security issue: every secret that had been exposed was rotated, with none of the old values still usable.
+* Successfully built a complete, hands-off CI/CD pipeline: from pushing code to production being updated is fully automatic, with secure authentication requiring no long-lived access keys.
+* Completed end-to-end business flow testing on the real environment — confirming the system works exactly as designed, from start to finish.
+* Finalized the technical documentation (README, architecture diagram) under a tight time crunch — wrapping up the 4-week journey of building the workshop project.

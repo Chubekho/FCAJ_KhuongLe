@@ -77,7 +77,7 @@ Every API request passes through AWS WAF, Amazon API Gateway, and the Amazon Cog
 
 **Architecture diagram:**
 
-![AI Content Generator Platform architecture](/images/proposal-architecture.png)
+![AI Content Generator Platform architecture](/images/5-Workshop/5.1-Workshop-overview/architecture.jpg)
 
 ### 4.2 Architecture components
 

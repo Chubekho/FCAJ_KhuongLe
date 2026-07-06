@@ -21,7 +21,7 @@ All infrastructure runs inside a dedicated VPC (not the Default VPC), spanning t
 
 Deployed via the `infrastructure/scripts/setup-vpc.sh` script: creates the VPC, subnets, route tables, Internet Gateway, NAT Gateways, and 4 corresponding Security Groups.
 
-![VPC and Subnets on AWS Console](/images/5-Workshop/5.3-networking/vpc-subnets.png)
+![VPC and Subnets on AWS Console](/images/5-Workshop/5.3-Networking/vpc-subnets.png)
 
 #### Security Groups
 
@@ -35,7 +35,7 @@ Deployed via the `infrastructure/scripts/setup-vpc.sh` script: creates the VPC, 
 
 > Principle: each tier only opens the port it needs, sourced only from the adjacent tier's Security Group — never from static IP ranges.
 
-![Security Group rules](/images/5-Workshop/5.3-networking/security-groups.png)
+![Security Group rules](/images/5-Workshop/5.3-Networking/security-groups.png)
 
 #### IAM Roles
 
@@ -47,7 +47,7 @@ Deployed via the `infrastructure/scripts/setup-vpc.sh` script: creates the VPC, 
 
 Lambda and EC2 use **separate** IAM Roles (not shared) under the least-privilege principle — limiting the blast radius if either role's permissions were ever compromised.
 
-![IAM Roles summary](/images/5-Workshop/5.3-networking/iam-roles.png)
+![IAM Roles summary](/images/5-Workshop/5.3-Networking/iam-roles.png)
 
 #### Verification
 

@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
+Trong suốt quá trình thực tập, em đã có cơ hội tham gia 2 sự kiện do FCAJ tổ chức. Mỗi sự kiện đều mang đến cho em những kiến thức mới mẻ và bổ ích, giúp mở rộng góc nhìn về công nghệ đám mây ngoài phạm vi bài học trên lớp. Chương trình còn có phần hỏi đáp sôi nổi cùng các phần quà dành cho người tham gia, tạo nên không khí giao lưu gần gũi và đáng nhớ.
 
 ## [Event 1](4.1-Event1/)
 &emsp;**Tên sự kiện:** FCAJ Community Day.

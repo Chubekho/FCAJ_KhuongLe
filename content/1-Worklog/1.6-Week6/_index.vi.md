@@ -9,7 +9,7 @@ pre: " <b> 1.6. </b> "
 ### Mục tiêu tuần 6:
 * Làm quen với containerization — đóng gói ứng dụng bằng Docker để đảm bảo chạy nhất quán giữa các môi trường (local, staging, production).
 * Tìm hiểu container orchestration với Amazon ECS/Fargate — vận hành container ở quy mô lớn mà không cần tự quản lý server (serverless container).
-* Xây dựng pipeline CI/CD tự động với AWS CodePipeline — nền tảng cho việc tự động hoá deploy ở dự án tốt nghiệp.
+* Xây dựng pipeline CI/CD tự động với AWS CodePipeline — nền tảng cho việc tự động hoá deploy ở dự án workshop cuối khoá.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |

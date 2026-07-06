@@ -1,57 +1,30 @@
 ---
-title: "Week 10 Worklog"
-date: 2024-01-01
-weight: 2
+title: "Worklog Week 10"
+date: 2026-06-22
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 10 objectives:
+* Build the complete frontend framework for the workshop project: user authentication, navigation layout, and the main management pages (Dashboard, Content, Persona).
+* Finish ContentEditor — the central screen of the entire product, where users actually generate marketing content with AI.
 
-### Week 10 Objectives:
+### Tasks to complete this week:
+| Day | Task | Start Date | Completion Date |
+| --- | --- | --- | --- |
+| Mon | - Built ProtectedRoute: checking login state, automatically restoring the session on page reload. <br> - Built the full routing structure (public routes/protected routes), initial placeholder pages. <br> - Built Login.tsx and Register.tsx: form validation, handling API errors, auto-login after registration. <br> - Built AppLayout: a 2-column layout, navigation sidebar, displaying user/organization info. | 22/06/2026 | 22/06/2026 |
+| Tue | - Built shared UI components (Spinner, status Badge). <br> - Completed the Dashboard: a token usage widget, a list of recent content, quick-action shortcuts. <br> - Completed the content list page: filtering by type/status/campaign directly from the server. | 23/06/2026 | 23/06/2026 |
+| Wed | - Built reusable UI components (Button, Input, Select). <br> - Built the Brand Persona management form (tone, voice, target audience, keywords), shared between create and edit modes. <br> - Completed the Persona list page: set default, edit, delete. <br> - Fixed a bug: the Persona edit form wasn't pre-filling array data (keywords, example outputs) when entering edit mode. | 24/06/2026 | 24/06/2026 |
+| Thu | - **[Milestone]** Built ContentEditor — the product's main screen: selecting a content type, choosing a Persona, entering a brief, generating content with AI. <br> - Wired up the polling mechanism to track AI processing progress in real time (no WebSocket required). <br> - Built the post-processing actions: Rewrite / Expand / Shorten content, and version history (restoring older versions). <br> - Fixed bugs: a race condition during polling (an older job's result overwriting a newer one), and lost brief/content-type data when regenerating content. | 25/06/2026 | 25/06/2026 |
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 10 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Results achieved in Week 10:
+* Completed the entire user authentication and navigation flow:
+  * The login session is automatically restored on page reload, avoiding unnecessarily logging users out.
+* Completed the main management pages with real data from the backend (no more placeholders):
+  * The Dashboard correctly aggregates the usage/quota data built in Week 9.
+  * The Persona management page allows full configuration of the "brand voice" — the product's core differentiating feature.
+* Completed ContentEditor — the most important milestone of the entire workshop:
+  * Users can complete the full journey: select a Persona → enter an idea → AI generates content → post-edit → review version history.
+  * Correctly handled the concurrency problem when polling multiple jobs in succession — fixing the race condition before it could affect the demo experience.
+* Drew an important lesson: the same data (brief, content type) needs to stay consistently synced across different PATCH API calls — a small data-layer mistake can lose content the user has already entered, so repeated editing flows need to be tested thoroughly.

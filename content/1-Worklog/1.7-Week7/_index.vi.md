@@ -30,7 +30,7 @@ pre: " <b> 1.7. </b> "
 * Nắm vững mô hình xử lý bất đồng bộ với SQS và SNS:
   * SQS: hàng đợi tin nhắn (queue), decouple giữa nơi tạo request và nơi xử lý — nếu consumer bị chậm/lỗi, request vẫn an toàn trong queue chứ không mất.
   * SNS: cơ chế pub/sub, một message có thể "fan-out" gửi tới nhiều subscriber cùng lúc (email, Lambda khác, SQS khác...).
-  * Đây chính là mô hình async job processing (API trả về ngay, xử lý thật diễn ra ở background) — kiến trúc lõi sẽ áp dụng trực tiếp cho phần xử lý bất đồng bộ ở dự án tốt nghiệp.
+  * Đây chính là mô hình async job processing (API trả về ngay, xử lý thật diễn ra ở background) — kiến trúc lõi sẽ áp dụng trực tiếp cho phần xử lý bất đồng bộ ở dự án workshop.
 * Thiết lập được observability cho hệ Serverless:
   * CloudWatch Logs để debug lỗi runtime của Lambda.
   * X-Ray để trace toàn bộ đường đi của 1 request qua nhiều service (API Gateway → Lambda → DynamoDB), xác định chính xác bước nào đang chậm.

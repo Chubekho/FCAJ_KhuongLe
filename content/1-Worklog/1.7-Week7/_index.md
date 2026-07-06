@@ -1,57 +1,38 @@
 ---
-title: "Week 7 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog Week 7"
+date: 2026-06-01
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 7 objectives:
+* Learn Serverless architecture: Lambda interacting directly with S3 and DynamoDB, with no need for a continuously running server.
+* Build a REST API with API Gateway to expose Lambda externally.
+* Practice asynchronous (async) processing with SQS and SNS — a producer/consumer decoupling model.
+* Get familiar with observability for Serverless systems: CloudWatch and X-Ray, along with automating deployment via CodePipeline.
 
-### Week 7 Objectives:
+### Tasks to complete this week:
+| Day | Task | Start Date | Completion Date | Reference |
+| --- | --- | --- | --- | --- |
+| Mon | - Learn Serverless architecture: Lambda, triggered by S3 Events, reading/writing data to DynamoDB. <br> - **Practice:** Write a Lambda function that automatically processes new files uploaded to S3, writing the results to DynamoDB. | 01/06/2026 | 01/06/2026 | [Serverless - Lambda Interacting with S3 and DynamoDB](https://000078.awsstudygroup.com/) |
+| Tue | - Learn Amazon API Gateway: REST API, Lambda Proxy Integration, request/response mapping. <br> - **Practice:** Build a REST API to expose a Lambda function externally, testing it with Postman and a simple frontend. | 02/06/2026 | 02/06/2026 | [Serverless - Building a Frontend that Calls API Gateway](https://000079.awsstudygroup.com/) |
+| Wed | - Learn asynchronous processing with Amazon SQS (queue) and SNS (pub/sub, fan-out). <br> - **Practice:** Simulate an order-processing flow — the API pushes a message to SQS, a Lambda worker consumes and processes it, and SNS sends result notifications to subscribers. | 03/06/2026 | 03/06/2026 | [Serverless - Processing Orders with SQS and SNS](https://000083.awsstudygroup.com/) |
+| Thu | - Learn observability for Serverless systems: CloudWatch Logs/Metrics and AWS X-Ray (distributed tracing). <br> - **Practice:** Enable X-Ray for Lambda, tracking the latency of each step across the API Gateway → Lambda → DynamoDB chain. | 04/06/2026 | 04/06/2026 | [Serverless - Monitoring a Serverless Application with CloudWatch and X-Ray](https://000085.awsstudygroup.com/) |
+| Fri | - Learn CI/CD specific to Serverless applications (different from the container deployment approach in Week 6) — using AWS SAM/CloudFormation to package and deploy Lambda. <br> - **Practice:** Build a CodePipeline that automatically redeploys the Lambda function on every new commit. | 05/06/2026 | 05/06/2026 | [Serverless - CI/CD with AWS CodePipeline](https://000084.awsstudygroup.com/) |
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
-
-### Week 7 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Results achieved in Week 7:
+* Understood and became proficient in the "event-driven" Serverless model:
+  * Lambda is automatically triggered by S3 Events, with no need for polling or a continuously running server.
+  * Read/wrote data to DynamoDB (NoSQL) from within a Lambda function.
+* Successfully built a REST API with API Gateway:
+  * Understood the Lambda Proxy Integration mechanism — API Gateway forwards the request/response directly for Lambda to handle.
+* Mastered the asynchronous processing model with SQS and SNS:
+  * SQS: a message queue that decouples where a request is created from where it's processed — if the consumer is slow or fails, the request stays safely in the queue rather than being lost.
+  * SNS: a pub/sub mechanism where one message can "fan out" to multiple subscribers at once (email, another Lambda, another SQS queue, etc.).
+  * This is exactly the async job processing model (the API returns immediately, with the real work happening in the background) — the core architecture to be applied directly to the asynchronous processing component of the workshop project.
+* Set up observability for the Serverless system:
+  * CloudWatch Logs for debugging Lambda runtime errors.
+  * X-Ray to trace the full path of a request across multiple services (API Gateway → Lambda → DynamoDB), pinpointing exactly which step is slow.
+* Built a dedicated CI/CD pipeline for Serverless:
+  * Understood the difference from the container CI/CD in Week 6: Serverless deploys via SAM/CloudFormation (packaging code + infrastructure config), with no Docker image build required.

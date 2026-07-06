@@ -1,57 +1,37 @@
 ---
-title: "Week 11 Worklog"
-date: 2024-01-01
-weight: 2
+title: "Worklog Week 11"
+date: 2026-06-29
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Week 11 objectives:
 
-### Week 11 Objectives:
+- Finish the remaining frontend features: file export, campaign management, usage tracking.
+- Harden security and system observability (Secrets Manager, CloudWatch, WAF) before going live.
+- Begin deploying the real AWS infrastructure for the workshop project: packaging artifacts and standing up the first infrastructure components.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks to complete this week:
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task | Start Date | Completion Date |
+| --- | --- | --- | --- |
+| Mon | - Built the file export area: 3 formats (PDF/DOCX/HTML), downloaded directly via a presigned URL. <br> - Completed the Campaign management page: creating new campaigns, attaching content to campaigns, archiving (soft delete). <br> - Completed the usage tracking page: a token/quota progress bar, broken down by AI model. | 29/06/2026 | 29/06/2026 |
+| Tue | - Moved all sensitive secrets (JWT, database, AI API key) from config files into a centralized secret management service, with a flexible toggle between local and production environments. <br> - Switched the AI provider to a lower-cost option through a provider abstraction layer (easy to switch back if needed). <br> - Set up centralized log monitoring (separate log groups for API and Worker), configuring email alerts for abnormal errors. <br> - Set up a Web Application Firewall to protect the application from common attacks. | 30/06/2026 | 30/06/2026 |
+| Wed | - Packaged the application into deployment-ready artifacts: bundling the source code for the background processing worker, building a multi-stage Docker image for the API tier. <br> - Hardened the application's security/production configuration (proxy, logging format suited to a real environment). <br> - Built the production frontend bundle, preparing an automated deployment script. | 01/07/2026 | 01/07/2026 |
+| Thu | - **Began deploying the real AWS infrastructure:** building a dedicated virtual network (multiple availability zones), an auto-failover relational database (Multi-AZ), an image storage registry, and least-privilege IAM roles. <br> - Set up a load balancer and auto scaling group for the application tier, along with an in-memory cache service for the data tier. | 02/07/2026 | 02/07/2026 |
 
+### Results achieved in Week 11:
 
-### Week 11 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- Completed all remaining frontend features:
+  - Users can export content to real files (PDF/DOCX/HTML) and organize content by marketing campaign.
+  - Gained clear visibility into monthly AI consumption — important for a usage-based SaaS billing model.
+- Significantly hardened the system's security layer before going to production:
+  - No secret remains directly in a config file — greatly reducing the risk of sensitive information leaking through source code.
+  - An abstraction layer for the AI Provider is in place — switching AI providers takes just one config variable, with no business-logic code changes needed.
+- Set up an observability layer and network-level defense:
+  - Centralized logging per component, with proactive alerts instead of manual checking.
+  - WAF blocks common attack types right at the system's entry point.
+- Officially moved into the real infrastructure deployment phase:
+  - Packaged standard artifacts (container image, serverless bundle) — exactly the skills practiced in Weeks 6-7.
+  - Successfully stood up the foundational infrastructure framework (a multi-AZ private network, a redundant database, a load balancer, auto scaling) — directly applying the High Availability knowledge learned in Week 5.
