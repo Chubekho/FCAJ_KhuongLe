@@ -1,31 +1,27 @@
 ---
 title: "Báo cáo thực tập"
-date: 2024-01-01
+date: 2026-07-01
 weight: 1
 chapter: false
 ---
 
 # Báo cáo thực tập
-### Thông tin sinh viên:
-&emsp; **Họ và tên:** Lê Duy Khương
 
-&emsp; **Số điện thoại:** 971488656
+### Thông tin sinh viên
 
-&emsp; **Email:** khuongduyle.it@gmail.com
+| Thông tin | Chi tiết |
+| --- | --- |
+| Họ tên | Lê Duy Khương |
+| Số điện thoại | 0971489656 |
+| Email | <khuongduyle.it@gmail.com> |
+| Trường | Trường Đại Học Công Nghệ TP.HCM (HUTECH) |
+| Ngành | Công nghệ thông tin |
+| Chuyên ngành | Công nghệ phần mềm |
+| Công ty thực tập | Công ty TNHH Amazon Web Services Viet Nam |
+| Vị trí thực tập | Workforce Bootcamp - First Cloud AI Journey |
+| Thời gian thực tập | 17/04/2026 - 10/07/2026 |
 
-&emsp; **Trường:** Trường Đại học Công Nghệ TP.HCM
-
-&emsp; **Ngành:** Công nghệ thông tin
-
-&emsp; **Lớp:** 
-
-&emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Viet Nam
-
-&emsp; **Vị trí thực tập:** Workforce Bootcamp - First Cloud AI Journey
-
-&emsp; **Thời gian thực tập:** Từ ngày 17/4/2026 đến ngày 17/7/2026
-
-![Ảnh đại diện của bạn](/images/avatar.png)
+![Ảnh đại diện của bạn](/images/avatar.jpeg)
 
 
 

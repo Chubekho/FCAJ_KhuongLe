@@ -1,6 +1,6 @@
 ---
 title: "Internship Report"
-date: 2024-01-01
+date: 2026-07-01
 weight: 1
 chapter: false
 ---
@@ -10,25 +10,19 @@ chapter: false
 
 
 ### Student Information:
-&emsp; **Full Name:** Le Duy Khuong
+| Field | Details |
+| --- | --- |
+| Full name | Le Duy Khuong |
+| Phone number | 0971489656 |
+| Email | <khuongduyle.it@gmail.com> |
+| University | Ho Chi Minh City University of Technology (HUTECH) |
+| Major | Information Technology |
+| Specialization | Software Engineering |
+| Internship company | Amazon Web Services Viet Nam Company Limited |
+| Internship position | Workforce Bootcamp - First Cloud AI Journey |
+| Internship duration | April 17, 2026 – July 10, 2026 |
 
-&emsp; **Phone Number:** 0971488656 
-
-&emsp; **Email:** khuongduyle.it@gmail.com
-
-&emsp; **University:** Ho Chi Minh City University of Technology
-
-&emsp; **Major:** Information Technology
-
-&emsp; **Class:** 
-
-&emsp; **Internship Company:** Amazon Web Services Viet Nam Company Limited
-
-&emsp; **Internship Position:** Workforce Bootcamp - First Cloud AI Journey
-
-&emsp; **Internship Duration:** From 17/4/2026 to 17/7/2026
-
-![Your profile picture](/images/avatar.png)
+![Your profile picture](/images/avatar.jpeg)
 
 ### Report Content
 
